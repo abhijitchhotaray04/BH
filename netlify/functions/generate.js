@@ -1,59 +1,58 @@
-// api/generate.js
-// This code runs securely on the Vercel server.
+// netlify/functions/generate.js
 import { GoogleGenAI } from '@google/genai';
 
 const apiKey = process.env.GEMINI_API_KEY; 
 const ai = apiKey ? new GoogleGenAI(apiKey) : null;
 
-// Helper function to reliably parse the request body stream (CRITICAL FIX)
-const getRequestBody = (req) => {
-    return new Promise((resolve, reject) => {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            try {
-                // Try to parse as JSON, otherwise return an empty object
-                resolve(body ? JSON.parse(body) : {});
-            } catch (e) {
-                // If JSON parsing fails, the body is invalid for our use case
-                reject(new Error("Invalid JSON in request body."));
-            }
-        });
-        req.on('error', reject);
-    });
+// Helper function to handle the response formatting (Netlify style)
+const formatResponse = (statusCode, body) => {
+    return {
+        statusCode,
+        headers: {
+            // Netlify-compatible way to set CORS headers
+            'Access-Control-Allow-Origin': '*', 
+            'Access-Control-Allow-Methods': 'POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+    };
 };
 
+// Netlify Function handler signature (event, context)
+exports.handler = async (event, context) => {
 
-export default async (req, res) => {
-    // 1. CORS Headers
-    res.setHeader('Access-Control-Allow-Origin', '*'); 
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
+    // 1. Handle pre-flight OPTIONS request
+    if (event.httpMethod === 'OPTIONS') {
+        return formatResponse(200, {});
     }
     
-    if (req.method !== 'POST') {
-        return res.status(405).send('Method Not Allowed');
+    // 2. Only allow POST requests
+    if (event.httpMethod !== 'POST') {
+        return formatResponse(405, { error: 'Method Not Allowed' });
     }
 
     try {
-        // 2. Body Parsing
-        const body = await getRequestBody(req);
+        // 3. Body Parsing (Netlify parses the body into event.body for POST requests)
+        let body;
+        try {
+            // Netlify's event.body is a string, which we need to parse
+            body = JSON.parse(event.body); 
+        } catch (e) {
+            return formatResponse(400, { error: "Invalid JSON in request body." });
+        }
+        
         const { prompt } = body; 
 
         if (!prompt) {
-            return res.status(400).json({ error: "Missing prompt in request body." });
+            return formatResponse(400, { error: "Missing prompt in request body." });
         }
 
         if (!ai) {
-             return res.status(500).json({ error: "Server error: API key is not configured on the server." });
+             return formatResponse(500, { error: "Server error: API key is not configured on the server." });
         }
 
-        // 3. Gemini API Call
+        // 4. Gemini API Call
         const response = await ai.models.generateContent({
             model: "gemini-2.5-flash",
             contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -61,13 +60,15 @@ export default async (req, res) => {
 
         const generatedText = response.candidates?.[0]?.content?.parts?.[0]?.text;
 
-        // 4. Send Response
-        res.status(200).json({ text: generatedText });
+        // 5. Send Response
+        return formatResponse(200, { text: generatedText });
 
     } catch (error) {
         console.error("Gemini API Error in Proxy:", error);
-        res.status(500).json({ 
-            error: "Failed to generate content via proxy.",
+        
+        // 6. Return error response
+        return formatResponse(500, { 
+            error: "Failed to generate content via proxy. Check Netlify logs.",
             details: error.message 
         });
     }
