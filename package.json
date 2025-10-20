@@ -15,6 +15,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google/genai": "^1.25.0"
+    "@google/genai": "^0.14.2" 
+  },
+  
+  "dependenciesMeta": {
+    "@google/genai": {
+      "unbundled": true
+    }
   }
+  
 }
