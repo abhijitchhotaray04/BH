@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "AI Resume Builder powered by Gemini",
   "main": "script.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,12 +15,5 @@
   "license": "ISC",
   "dependencies": {
     "@google/genai": "^0.14.2" 
-  },
-  
-  "dependenciesMeta": {
-    "@google/genai": {
-      "unbundled": true
-    }
   }
-  
 }

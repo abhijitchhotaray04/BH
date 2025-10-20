@@ -1,15 +1,16 @@
 // netlify/functions/generate.js
-import { GoogleGenAI } from '@google/genai';
+// Use require() instead of import/export to ensure CJS compatibility with Netlify's bundler.
+const { GoogleGenAI } = require('@google/genai');
 
 const apiKey = process.env.GEMINI_API_KEY; 
-const ai = apiKey ? new GoogleGenAI(apiKey) : null;
+// Check if the API key exists before attempting to initialize the AI object
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 // Helper function to handle the response formatting (Netlify style)
 const formatResponse = (statusCode, body) => {
     return {
         statusCode,
         headers: {
-            // Netlify-compatible way to set CORS headers
             'Access-Control-Allow-Origin': '*', 
             'Access-Control-Allow-Methods': 'POST, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type',
