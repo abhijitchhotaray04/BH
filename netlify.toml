@@ -5,3 +5,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  
+[functions]
+  # CRITICAL FIX: Tell Netlify to package the entire module as-is 
+  # and not try to bundle it with esbuild.
+  external_node_modules = ["@google/genai"]

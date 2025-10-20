@@ -1,9 +1,8 @@
 // netlify/functions/generate.js
-// Use require() instead of import/export to ensure CJS compatibility with Netlify's bundler.
-const { GoogleGenAI } = require('@google/genai');
+// Reverting to modern ES Module syntax. The fix is now in netlify.toml.
+import { GoogleGenAI } from '@google/genai';
 
 const apiKey = process.env.GEMINI_API_KEY; 
-// Check if the API key exists before attempting to initialize the AI object
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 // Helper function to handle the response formatting (Netlify style)
