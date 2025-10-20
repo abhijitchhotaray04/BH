@@ -325,7 +325,7 @@ async function callGeminiAPI() {
         const finalPrompt = constructFinalPrompt(resumeData, translations[currentLang]);
         
         // This is the secure proxy endpoint
-        const proxyEndpoint = "/api/generate";
+       const proxyEndpoint = "/.netlify/functions/generate";
         
         const response = await fetch(proxyEndpoint, {
             method: "POST",

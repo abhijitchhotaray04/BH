@@ -1,0 +1,11 @@
+# netlify.toml
+[build]
+  # This tells Netlify to serve your index.html and static files from the root
+  publish = "." 
+  
+  # This tells Netlify where your serverless functions are located
+  functions = "netlify/functions" 
+
+# Optional: Set the Node.js version if needed, but usually defaults to latest
+[build.environment]
+  NODE_VERSION = "20"
