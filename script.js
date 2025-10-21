@@ -328,25 +328,29 @@ if (SpeechRecognition) {
 
 // --- 5. Gemini API Handler ---
 // --- NEW FUNCTION TO CALL THE NETLIFY PROXY ---
+// --- NEW FUNCTION TO CALL THE NETLIFY PROXY ---
 async function callGeminiProxy(userData) {
     const apiUrl = '/api/generate'; // This URL is routed by netlify.toml to your function
 
     try {
         const response = await fetch(apiUrl, {
-            method: 'POST',
+            // VITAL FIX: You must explicitly set the method to 'POST'
+            method: 'POST', 
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
         });
 
         if (!response.ok) {
+            // Attempt to parse the serverless function's error message
             const errorBody = await response.json().catch(() => ({ message: response.statusText }));
+            // If the server returned 405 (Method Not Allowed), this is where the error comes from.
             throw new Error(`Proxy call failed: ${errorBody.message}`);
         }
 
         const result = await response.json();
         
         if (!result.resumeText) {
-             throw new Error("Proxy did not return resume text.");
+             throw new Error("Proxy did not return resume text. Check Netlify logs for API key or permission issues.");
         }
 
         return result.resumeText;
