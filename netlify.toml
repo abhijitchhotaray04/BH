@@ -1,0 +1,12 @@
+[build]
+  # Optional: specifies the directory containing your static files
+  publish = "." 
+  # Tells Netlify where to look for your functions
+  functions = "netlify/functions" 
+
+# Set up a redirect rule so your client-side code can simply call '/api/generate'
+# and Netlify routes it to your function.
+[[redirects]]
+  from = "/api/generate"
+  to = "/.netlify/functions/generate_resume"
+  status = 200

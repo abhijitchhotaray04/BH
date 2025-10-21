@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <span class="app-name">BLUEHIRE</span>
+    </header>
+
+    <div class="container">
+        <h1>AI Resume Builder</h1>
+
+        <div class="lang-selector">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="hi">Hindi (हिंदी)</option>
+                <option value="or">Odia (ଓଡ଼ିଆ)</option>
+            </select>
+        </div>
+        <p id="tagline">Answer simple questions one-by-one to build your professional resume.</p>
+
+        <div id="wizard-form">
+
+            <div class="step-card" id="step-1">
+                <label for="input-name" class="question-label">1. What is your full name?</label>
+                <div class="input-container">
+                    <input type="text" id="input-name" class="wizard-input" placeholder="e.g., Ramesh Kumar">
+                    <button type="button" class="voice-btn" id="voice-btn-1" title="Start Voice Input">🎙️</button>
+                </div>
+                <button type="button" class="step-btn" data-next="2">Next: Job Title</button>
+            </div>
+
+            <div class="step-card hidden" id="step-2">
+                <label for="input-job" class="question-label">2. What is your most recent job title?</label>
+                <div class="input-container">
+                    <input type="text" id="input-job" class="wizard-input" placeholder="e.g., Electrician, HVAC Technician, Security Guard">
+                    <button type="button" class="voice-btn" id="voice-btn-2" title="Start Voice Input">🎙️</button>
+                </div>
+                <div class="navigation-group">
+                     <button type="button" class="step-back-btn" data-prev="1">Back</button>
+                     <button type="button" class="step-btn" data-next="3">Next: Experience</button>
+                 </div>
+            </div>
+
+            <div class="step-card hidden" id="step-3">
+                <label for="input-experience" class="question-label">3. Describe your daily work duties, skills, and main tools used.</label>
+                <div class="input-container">
+                    <textarea id="input-experience" placeholder="Type or paste details (e.g., 'Repaired commercial HVAC units, used a multimeter and thermal camera, followed safety protocols')."></textarea>
+                    <button type="button" class="voice-btn" id="voice-btn-3" title="Start Voice Input">🎙️</button>
+                </div>
+                 <div class="navigation-group">
+                     <button type="button" class="step-back-btn" data-prev="2">Back</button>
+                     <button type="button" class="step-btn" data-next="4">Next: Education</button>
+                 </div>
+            </div>
+
+            <div class="step-card hidden" id="step-4">
+                <label for="input-education" class="question-label">4. What is your highest level of formal education?</label>
+                <div class="input-container">
+                    <textarea id="input-education" placeholder="e.g., Class 10th Pass, Diploma in Mechanical Engineering from XYZ College, B.A. History from ABC University."></textarea>
+                    <button type="button" class="voice-btn" id="voice-btn-4" title="Start Voice Input">🎙️</button>
+                </div>
+                 <div class="navigation-group">
+                     <button type="button" class="step-back-btn" data-prev="3">Back</button>
+                     <button type="button" class="step-btn" data-next="5">Next: Certifications</button>
+                 </div>
+            </div>
+
+            <div class="step-card hidden" id="step-5">
+                <label for="input-certs" class="question-label">5. List any professional certifications, licenses, or specific training.</label>
+                <div class="input-container">
+                    <textarea id="input-certs" placeholder="e.g., Commercial Driver's License (CDL), OSHA 10-Hour Safety Training, ITI Electrician Certificate, Forklift Operator License."></textarea>
+                    <button type="button" class="voice-btn" id="voice-btn-5" title="Start Voice Input">🎙️</button>
+                </div>
+                 <div class="navigation-group">
+                     <button type="button" class="step-back-btn" data-prev="4">Back</button>
+                     <button type="button" class="step-btn" data-next="6">Next: Achievements</button>
+                 </div>
+            </div>
+
+            <div class="step-card hidden" id="step-6">
+                <label for="input-achievements" class="question-label">6. List 2-3 of your key achievements. Use numbers if possible!</label>
+                <div class="input-container">
+                    <textarea id="input-achievements" placeholder="e.g., Reduced equipment downtime by 20% in 6 months; Managed a team of 4 people; Safely completed 50+ welding jobs without incident."></textarea>
+                    <button type="button" class="voice-btn" id="voice-btn-6" title="Start Voice Input">🎙️</button>
+                </div>
+                 <div class="navigation-group">
+                     <button type="button" class="step-back-btn" data-prev="5">Back</button>
+                     <button type="button" id="generate-btn">Generate Resume</button>
+                 </div>
+            </div>
+
+        </div>
+        <div id="loading-spinner" class="hidden"></div>
+
+        <div class="resume-output">
+            <h2>Your Generated Resume:</h2>
+            <div id="resume-text">Fill in the steps above and click 'Generate Resume' to see your result.</div>
+            <button id="download-btn" class="hidden">Download Resume (Formatted HTML)</button>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>&copy; 2024 BLUEHIRE | AI-Powered Resume Generation. All rights reserved.</p>
+        <p><a href="#" class="footer-link">Privacy Policy</a> | <a href="#" class="footer-link">Terms of Use</a></p>
+    </footer>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
