@@ -332,3 +332,97 @@ button:disabled {
     color: #4B0082;
     text-decoration: underline;
 }
+/* Template section starts here*/
+/* --- TEMPLATE MODAL STYLES (New Section) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is on top of everything */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.3s ease-out;
+}
+
+.modal-content h3 {
+    color: #4B0082;
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.modal-content p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.template-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.template-option-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #F8F5FF;
+    border: 2px solid #D0B8FF;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.template-option-btn:hover {
+    background-color: #EDE7F6;
+    border-color: #8A2BE2;
+    box-shadow: 0 4px 8px rgba(138, 43, 226, 0.1);
+}
+
+.template-title {
+    display: block;
+    font-weight: 700;
+    color: #4B0082;
+    font-size: 16px;
+}
+
+.template-desc {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.close-btn {
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px;
+}
+
+/* Optional: Mobile adjustments for modal */
+@media (max-width: 550px) {
+    .modal-content {
+        margin: 20px;
+        padding: 20px;
+    }
+}

@@ -1,6 +1,3 @@
-// --- PASTE YOUR API KEY HERE ---
-//const API_KEY = "AIzaSyAXH5f6th1ixFI4_oBjvk5iG_B_6XGwJUI";
-
 // --- 1. LANGUAGE TRANSLATIONS OBJECT ---
 const translations = {
     en: {
@@ -15,12 +12,12 @@ const translations = {
         listening: "Listening... Speak clearly now.",
         promptInstruction: "Respond in English. The resume must contain English words.",
         promptError: "Not enough job data provided. Please try again with details about your experience, skills, and certifications.",
-        nameLabel: "1. What is your full name?",
-        jobLabel: "2. What is your most recent job title?",
-        experienceLabel: "3. Describe your daily work duties, skills, and main tools used.",
-        educationLabel: "4. What is your highest level of formal education?",
-        certsLabel: "5. List any professional certifications, licenses, or specific training.",
-        achievementsLabel: "6. List 2-3 of your key achievements. Use numbers if possible!",
+        nameLabel: " What is your full name?",
+        jobLabel: " What is your most recent job title?",
+        experienceLabel: " Describe your daily work duties, skills, and main tools used.",
+        educationLabel: " What is your highest level of formal education?",
+        certsLabel: " List any professional certifications, licenses, or specific training.",
+        achievementsLabel: " List 2-3 of your key achievements.",
         nextJob: "Next: Job Title",
         nextExperience: "Next: Experience",
         nextEducation: "Next: Education",
@@ -40,12 +37,12 @@ const translations = {
         listening: "सुन रहा हूँ... अब स्पष्ट बोलें।",
         promptInstruction: "हिंदी में जवाब दें। बायोडाटा में हिंदी शब्द होने चाहिए।",
         promptError: "पर्याप्त नौकरी डेटा प्रदान नहीं किया गया। कृपया अपने अनुभव, कौशल और प्रमाणन के विवरण के साथ पुनः प्रयास करें।",
-        nameLabel: "1. आपका पूरा नाम क्या है?",
-        jobLabel: "2. आपका सबसे हालिया पद (Job Title) क्या है?",
-        experienceLabel: "3. अपने दैनिक कार्य कर्तव्यों, कौशल और मुख्य उपकरणों का वर्णन करें।",
-        educationLabel: "4. आपकी औपचारिक शिक्षा (Formal Education) का उच्चतम स्तर क्या है?",
-        certsLabel: "5. अपने व्यावसायिक प्रमाणन (Certifications), लाइसेंस, या विशिष्ट प्रशिक्षण को सूचीबद्ध करें।",
-        achievementsLabel: "6. अपनी 2-3 प्रमुख उपलब्धियों को सूचीबद्ध करें। यदि संभव हो तो संख्या (numbers) का उपयोग करें!",
+        nameLabel: " आपका पूरा नाम क्या है?",
+        jobLabel: " आपका सबसे हालिया पद (Job Title) क्या है?",
+        experienceLabel: " अपने दैनिक कार्य कर्तव्यों, कौशल और मुख्य उपकरणों का वर्णन करें।",
+        educationLabel: " आपकी औपचारिक शिक्षा (Formal Education) का उच्चतम स्तर क्या है?",
+        certsLabel: " अपने व्यावसायिक प्रमाणन (Certifications), लाइसेंस, या विशिष्ट प्रशिक्षण को सूचीबद्ध करें।",
+        achievementsLabel: " अपनी 2-3 प्रमुख उपलब्धियों को सूचीबद्ध करें। ",
         nextJob: "अगला: पद (Job Title)",
         nextExperience: "अगला: कार्य विवरण",
         nextEducation: "अगला: शिक्षा",
@@ -65,12 +62,12 @@ const translations = {
         listening: "ଶୁଣୁଛି... ବର୍ତ୍ତମାନ ସ୍ପଷ୍ଟ ଭାବରେ କୁହନ୍ତୁ।",
         promptInstruction: "ଓଡିଆରେ ଉତ୍ତର ଦିଅନ୍ତୁ। ବାୟୋଡାଟା ଓଡିଆ ଶବ୍ଦ ଧାରଣ କରିବା ଉଚିତ୍।",
         promptError: "ଯଥେଷ୍ଟ ଚାକିରି ତଥ୍ୟ ପ୍ରଦାନ କରାଯାଇ ନାହିଁ। ଦୟାକରି ଆପଣଙ୍କର ଅଭିଜ୍ଞତା, କୌଶଳ ଏବଂ ପ୍ରମାଣପତ୍ର ବିଷୟରେ ବିବରଣୀ ସହିତ ପୁନଃ ଚେଷ୍ଟା କରନ୍ତୁ।",
-        nameLabel: "1. ଆପଣଙ୍କର ପୂରା ନାମ କଣ?",
-        jobLabel: "2. ଆପଣଙ୍କର ସବୁଠାରୁ ନିକଟତମ ଚାକିରି ଶୀର୍ଷକ କ'ଣ?",
-        experienceLabel: "3. ଆପଣଙ୍କର ଦୈନିକ କାର୍ଯ୍ୟ କର୍ତ୍ତବ୍ୟ, କୌଶଳ ଏବଂ ମୁଖ୍ୟ ଉପକରଣ ବର୍ଣ୍ଣନା କରନ୍ତୁ।",
-        educationLabel: "4. ଆପଣଙ୍କର ଔପଚାରିକ ଶିକ୍ଷା (Formal Education) ର ସର୍ବୋଚ୍ଚ ସ୍ତର କ'ଣ?",
-        certsLabel: "5. କୌଣସି ବୃତ୍ତିଗତ ପ୍ରମାଣପତ୍ର, ଲାଇସେନ୍ସ, କିମ୍ବା ନିର୍ଦ୍ଦିଷ୍ଟ ତାଲିମ ତାଲିକାଭୁକ୍ତ କରନ୍ତୁ।",
-        achievementsLabel: "6. ଆପଣଙ୍କର 2-3 ମୁଖ୍ୟ ସଫଳତାଗୁଡ଼ିକୁ ତାଲିକାଭୁକ୍ତ କରନ୍ତୁ। ଯଦି ସମ୍ଭବ ତେବେ ସଂଖ୍ୟା ବ୍ୟବହାର କରନ୍ତୁ!",
+        nameLabel: " ଆପଣଙ୍କର ପୂରା ନାମ କଣ?",
+        jobLabel: " ଆପଣଙ୍କର ସବୁଠାରୁ ନିକଟତମ ଚାକିରି ଶୀର୍ଷକ କ'ଣ?",
+        experienceLabel: " ଆପଣଙ୍କର ଦୈନିକ କାର୍ଯ୍ୟ କର୍ତ୍ତବ୍ୟ, କୌଶଳ ଏବଂ ମୁଖ୍ୟ ଉପକରଣ ବର୍ଣ୍ଣନା କରନ୍ତୁ।",
+        educationLabel: " ଆପଣଙ୍କର ଔପଚାରିକ ଶିକ୍ଷା (Formal Education) ର ସର୍ବୋଚ୍ଚ ସ୍ତର କ'ଣ?",
+        certsLabel: " କୌଣସି ବୃତ୍ତିଗତ ପ୍ରମାଣପତ୍ର, ଲାଇସେନ୍ସ, କିମ୍ବା ନିର୍ଦ୍ଦିଷ୍ଟ ତାଲିମ ତାଲିକାଭୁକ୍ତ କରନ୍ତୁ।",
+        achievementsLabel: " ଆପଣଙ୍କର 2-3 ମୁଖ୍ୟ ସଫଳତାଗୁଡ଼ିକୁ ତାଲିକାଭୁକ୍ତ କରନ୍ତୁ।",
         nextJob: "ପରବର୍ତ୍ତୀ: ଚାକିରି ଶୀର୍ଷକ",
         nextExperience: "ପରବର୍ତ୍ତୀ: କାର୍ଯ୍ୟ ବିବରଣୀ",
         nextEducation: "ପରବର୍ତ୍ତୀ: ଶିକ୍ଷା",
@@ -83,11 +80,25 @@ const translations = {
 
 let currentLang = 'en';
 const MIN_INPUT_LENGTH = 10; // Adjusted minimum length slightly
+// --- NEW: Read language from URL ---
+try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const langFromUrl = urlParams.get('lang');
+    if (langFromUrl === 'hi' || langFromUrl === 'or') {
+        currentLang = langFromUrl;
+    } else {
+        currentLang = 'en'; // Default to English if 'lang' is missing or not 'hi'/'or'
+    }
+} catch (e) {
+    console.error("Could not read URL params, defaulting to English.", e);
+    currentLang = 'en';
+}
+// --- End of new code ---
 
 // --- 2. DOM Elements ---
 const elements = {
     tagline: document.getElementById('tagline'),
-    langSelect: document.getElementById('language-select'),
+   // langSelect: document.getElementById('language-select'),
     userInputName: document.getElementById('input-name'),
     userInputJob: document.getElementById('input-job'),
     userInputExperience: document.getElementById('input-experience'),
@@ -99,6 +110,9 @@ const elements = {
     loadingSpinner: document.getElementById('loading-spinner'),
     resumeText: document.getElementById('resume-text'),
     downloadBtn: document.getElementById('download-btn'),
+    templateModal: document.getElementById('template-modal'),
+    modalCloseBtn: document.getElementById('modal-close-btn'),
+    templateOptions: document.querySelectorAll('.template-option-btn'),
     wizardForm: document.getElementById('wizard-form'),
     outputTitle: document.querySelector('.resume-output h2'),
     steps: {
@@ -318,7 +332,7 @@ if (SpeechRecognition) {
     } catch (error) {
          console.error("Failed to initialize SpeechRecognition:", error);
          // Hide all buttons if initialization fails completely
-         elements.voiceBtns.forEach(button => button.style.display = 'none');
+        // elements.voiceBtns.forEach(button => button.style.display = 'none');
     }
 
 } else {
@@ -327,7 +341,6 @@ if (SpeechRecognition) {
 }
 
 // --- 5. Gemini API Handler ---
-// --- NEW FUNCTION TO CALL THE NETLIFY PROXY ---
 // --- NEW FUNCTION TO CALL THE NETLIFY PROXY ---
 async function callGeminiProxy(userData) {
     const apiUrl = '/api/generate'; // This URL is routed by netlify.toml to your function
@@ -388,7 +401,30 @@ async function generateResume() {
     elements.generateBtn.disabled = true;
     elements.loadingSpinner.classList.remove('hidden');
     elements.resumeText.innerHTML = '<p>Generating resume, please wait...</p>';
-    elements.downloadBtn.classList.add('hidden');
+   //Here the new code starts (template)
+   // --- REPLACE THIS BLOCK ---
+elements.downloadBtn.addEventListener('click', () => {
+    elements.templateModal.classList.remove('hidden');
+});
+
+// Add listener to close the modal
+elements.modalCloseBtn.addEventListener('click', () => {
+    elements.templateModal.classList.add('hidden');
+});
+
+// Add listeners to the template buttons
+elements.templateOptions.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const templateStyle = e.currentTarget.getAttribute('data-template');
+        
+        // Hide modal and trigger the actual download
+        elements.templateModal.classList.add('hidden');
+        
+        // --- IMPORTANT: Call the download function with the chosen template ---
+        downloadResume(elements.resumeText.innerHTML, templateStyle);
+    });
+});
+// --- END REPLACE BLOCK ---
 
     try {
         // 2. Call the NEW proxy function
@@ -411,30 +447,74 @@ async function generateResume() {
 }
 
 // --- 6. DOWNLOAD LOGIC ---
-function downloadResume() {
-    const rawContent = elements.resumeText.innerHTML;
+// --- 6. DOWNLOAD LOGIC (Corrected Version) ---
+function downloadResume(rawContent, templateStyle = 'classic') {
+    
+    // Get user name for the file
     const userName = elements.userInputName.value.trim() || 'Resume';
 
-    const htmlContent = `
-        <!DOCTYPE html><html lang="${currentLang}"><head><meta charset="UTF-8"><title>Resume - ${userName}</title>
-            <style>
-                body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; background-color: #f4f4f4; }
-                .resume-download-content { max-width: 8.5in; margin: 30px auto; padding: 40px; line-height: 1.5; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-                h1, h2, h3 { color: #2c3e50; border-bottom: 1px solid #eee; padding-bottom: 5px; margin: 20px 0 10px; }
-                 h1 { text-align: center; border-bottom-width: 2px; border-color: #34495e; font-size: 1.5em; margin-bottom: 25px;} /* Contact */
-                 h2 { text-transform: uppercase; font-size: 1.1em; border-color: #bdc3c7; } /* Sections */
-                 p { margin: 0 0 10px; }
-                 ul { list-style-type: disc; margin: 0 0 15px 20px; padding: 0; }
-                 li { margin-bottom: 5px; }
-                 /* Ensure black text for printing if needed, but allow browser default */
-                 /* @media print { * { color: #000 !important; } } */
-            </style></head><body><div class="resume-download-content">${rawContent}</div></body></html>`;
+    // --- 1. Define CSS styles based on the chosen template ---
+    let resumeCSS = '';
 
+    if (templateStyle === 'classic') {
+        // Classic CSS: Single column, clear sections, good for printing
+        // (FIX: Added backticks `` around the CSS string)
+        resumeCSS = `
+            body { font-family: 'Times New Roman', serif; font-size: 12pt; max-width: 8.5in; margin: 0 auto; padding: 0.5in; }
+            .resume-download-content { line-height: 1.3; }
+            h1 { text-align: center; font-size: 18pt; margin: 0 0 10pt; text-transform: uppercase; }
+            h2 { font-size: 14pt; margin: 10pt 0 5pt; border-bottom: 1px solid #333; text-transform: uppercase; }
+            h3 { font-size: 12pt; margin: 5pt 0 2pt; font-style: italic; }
+            p { margin: 0 0 5pt; }
+            ul { list-style-type: disc; margin: 0 0 10pt 20pt; padding: 0; }
+            li { margin-bottom: 3pt; }
+            .contact-info { text-align: center; margin-bottom: 10pt; }
+        `;
+    } else if (templateStyle === 'modern') {
+        // Modern CSS: Left-aligned contact/skills, different section style
+        resumeCSS = `
+            body { font-family: Arial, sans-serif; font-size: 10.5pt; max-width: 8.5in; margin: 0 auto; padding: 25px; }
+            .resume-download-content { line-height: 1.4; }
+            h1 { font-size: 24pt; margin: 0 0 5px; color: #4B0082; }
+            .contact-info { margin-bottom: 20px; color: #555; }
+            h2 { font-size: 14pt; margin: 15px 0 5px; padding-left: 10px; border-left: 3px solid #8A2BE2; text-transform: uppercase; }
+            h3 { font-size: 11pt; margin: 5px 0 2px; font-weight: bold; }
+            p { margin: 0 0 8px; }
+            ul { list-style-type: square; margin: 0 0 15px 20px; padding: 0; }
+            li { margin-bottom: 4px; }
+        `;
+    } 
+    // You can add more 'else if' blocks here for new templates
+
+    
+    // --- 2. Create the final HTML content ---
+    // (FIX: This was defined in the wrong place in your snippet)
+    const htmlContent = `
+        <!DOCTYPE html>
+        <html lang="${currentLang}">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Resume - ${userName}</title>
+            <style>
+                /* Inject the chosen template CSS here */
+                ${resumeCSS}
+            </style>
+        </head>
+        <body>
+            <div class="resume-download-content">
+                ${rawContent}
+            </div>
+        </body>
+        </html>`;
+
+    // --- 3. Create Blob and trigger download ---
     const blob = new Blob([htmlContent], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Resume_${userName.replace(/ /g, '_')}_${currentLang.toUpperCase()}.html`;
+    // (FIX: Added templateStyle to the filename)
+    a.download = `Resume_${userName.replace(/ /g, '_')}_${templateStyle}.html`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -442,14 +522,15 @@ function downloadResume() {
 }
 
 
+
 // --- 7. INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
     // Attach download handler on DOMContentLoaded
     elements.downloadBtn.addEventListener('click', downloadResume);
-    elements.langSelect.addEventListener('change', (e) => {
-        currentLang = e.target.value;
-        updateLanguageUI();
-    });
+    //elements.langSelect.addEventListener('change', (e) => {
+      //  currentLang = e.target.value;
+        //updateLanguageUI();
+    //});
 
     updateLanguageUI();
     initWizard();
